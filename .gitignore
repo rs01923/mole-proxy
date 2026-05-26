@@ -1,0 +1,6 @@
+/target
+/.idea
+*.lock
+config.json
+mullvad-config/*
+gui

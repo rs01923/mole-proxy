@@ -1,0 +1,14 @@
+services:
+  mole-proxy:
+    build: .
+    container_name: mole-proxy
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ./mullvad-config:/etc/mullvad-vpn:z
+    ports:
+      - "25565:25565"
+      - "8555:8555"
+    restart: unless-stopped
