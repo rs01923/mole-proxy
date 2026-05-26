@@ -4,3 +4,5 @@
 config.json
 mullvad-config/*
 gui
+mole-proxy-gui/.idea
+mole-proxy-reverse-proxy/.idea
