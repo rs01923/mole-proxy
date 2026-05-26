@@ -21,8 +21,11 @@ pub async fn start_proxy(State(state): State<Arc<AppState>>) -> Result<&'static 
                 processed_location = processed_location.replace('-', " ");
             }
 
-        info!("Setting Mullvad relay location to {}...", processed_location);
-            
+            info!(
+                "Setting Mullvad relay location to {}...",
+                processed_location
+            );
+
             let mut cmd = Command::new("mullvad");
             cmd.args(["relay", "set", "location"]);
             for part in processed_location.split_whitespace() {
@@ -60,10 +63,13 @@ pub async fn start_proxy(State(state): State<Arc<AppState>>) -> Result<&'static 
         .args(["-s", "https://checkip.amazonaws.com"])
         .output()
         .await;
-    
+
     match ip_output {
         Ok(output) => {
-            println!("New Public IP: {}", String::from_utf8_lossy(&output.stdout).trim());
+            println!(
+                "New Public IP: {}",
+                String::from_utf8_lossy(&output.stdout).trim()
+            );
         }
         Err(e) => {
             error!("Failed to fetch public IP: {}", e);

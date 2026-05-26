@@ -234,7 +234,7 @@ impl eframe::App for MoleProxyApp {
                     if start_button.clicked() {
                         self.normalize_addresses();
                         let _ = self.save_to_file();
-                        
+
                         let _ = network::stop_proxy();
 
                         let mut final_location = if self.use_custom_location {

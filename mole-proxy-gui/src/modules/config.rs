@@ -30,8 +30,7 @@ pub struct MoleProxyApp {
 
 impl MoleProxyApp {
     pub fn new() -> Self {
-        let mut app = 
-            Self::load().unwrap_or_else(|e| {
+        let mut app = Self::load().unwrap_or_else(|e| {
             eprintln!("Warning: Could not load config, using defaults: {}", e);
             Self {
                 server_addr: "anticheat-test.com:25565".to_owned(),
