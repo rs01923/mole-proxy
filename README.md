@@ -18,7 +18,7 @@ Make sure you have the following installed on your system:
 1. Open a terminal in the root of the project.
 2. Run the startup script for your platform:
 
-### On Linux or Git Bash / MSYS:
+### On Linux:
 ```bash
 chmod +x ./start.sh
 ./start.sh
